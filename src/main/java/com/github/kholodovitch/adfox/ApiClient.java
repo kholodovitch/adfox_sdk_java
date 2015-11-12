@@ -67,8 +67,8 @@ public class ApiClient implements IApiClient {
 		Document doc = dBuilder.parse(entity.getContent());
 
 		XPath xPath = XPathFactory.newInstance().newXPath();
-		NodeList nodes = (NodeList) xPath.evaluate("/response/status/code", doc.getDocumentElement(), XPathConstants.NODESET);
-		if (nodes != null && nodes.getLength() == 0) {
+		NodeList nodes = (NodeList) xPath.evaluate("/response/status/code", doc, XPathConstants.NODESET);
+		if (nodes != null && nodes.getLength() > 0) {
 			int resultCode = Integer.parseInt(nodes.item(0).getTextContent());
 			if (resultCode != 0) {
 				throw new AdFoxResultException("Can't result status code = " + resultCode);
