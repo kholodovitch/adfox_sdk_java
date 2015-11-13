@@ -44,9 +44,21 @@ public class ActionAccountList implements IActionAccountList {
 		return Arrays.asList(result);
 	}
 
-	public BannerPlacements bannerPlacements(long bannerId) {
-		// TODO Auto-generated method stub
-		return null;
+	public List<BannerPlacements> bannerPlacements(long bannerId) {
+		Element resultElement = apiClient.callApi("account", "list", "banner", "bannerID=" + Long.toString(bannerId));
+		Node rowsElement = resultElement.getElementsByTagName("rows").item(0);
+		int rowsCount = Integer.parseInt(rowsElement.getTextContent());
+
+		XPath xPath = XPathFactory.newInstance().newXPath();
+		NodeList nodes = (NodeList) xPath.evaluate("data/*[starts-with(local-name(), 'row')]", resultElement, XPathConstants.NODESET);
+
+		BannerPlacements[] result = new BannerPlacements[rowsCount];
+		for (int i = 0; i < nodes.getLength(); i++) {
+			Element item = (Element) nodes.item(i);
+			int rowIndex = Integer.parseInt(item.getNodeName().substring(3));
+			result[rowIndex] = new BannerPlacements(item);
+		}
+		return Arrays.asList(result);
 	}
 
 }

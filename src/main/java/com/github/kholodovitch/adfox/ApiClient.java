@@ -47,7 +47,7 @@ public class ApiClient implements IApiClient {
 		return placement;
 	}
 
-	Element callApi(String object, String action, String actionObject) throws ClientProtocolException, IOException, UnsupportedOperationException, SAXException, ParserConfigurationException, XPathExpressionException, AdFoxResultException {
+	Element callApi(String object, String action, String actionObject, String... additional) throws ClientProtocolException, IOException, UnsupportedOperationException, SAXException, ParserConfigurationException, XPathExpressionException, AdFoxResultException {
 		String uri = "https://login.adfox.ru/API.php?loginAccount=" + login + "&loginPassword=" + passSha256;
 		if (object != null)
 			uri += "&object=" + object;
@@ -55,6 +55,10 @@ public class ApiClient implements IApiClient {
 			uri += "&action=" + action;
 		if (actionObject != null)
 			uri += "&actionObject=" + actionObject;
+		if (additional != null && additional.length > 0) {
+			for (int i = 0; i < additional.length; i++)
+				uri += "&" + additional[i];
+		}
 
 		HttpClientBuilder builder = HttpClientBuilder.create();
 		CloseableHttpClient httpclient = builder.build();

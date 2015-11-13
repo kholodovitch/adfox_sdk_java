@@ -16,5 +16,5 @@ import com.github.kholodovitch.adfox.exceptions.AdFoxResultException;
 public interface IActionAccountList {
 	List<Banner> banner() throws ClientProtocolException, UnsupportedOperationException, XPathExpressionException, IOException, SAXException, ParserConfigurationException, AdFoxResultException;
 
-	BannerPlacements bannerPlacements(long bannerId);
+	List<BannerPlacements> bannerPlacements(long bannerId);
 }
