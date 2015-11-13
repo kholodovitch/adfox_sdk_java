@@ -44,7 +44,7 @@ public class ActionAccountList implements IActionAccountList {
 		return Arrays.asList(result);
 	}
 
-	public List<BannerPlacements> bannerPlacements(long bannerId) {
+	public List<BannerPlacements> bannerPlacements(long bannerId) throws XPathExpressionException, ClientProtocolException, UnsupportedOperationException, IOException, SAXException, ParserConfigurationException, AdFoxResultException {
 		Element resultElement = apiClient.callApi("account", "list", "banner", "bannerID=" + Long.toString(bannerId));
 		Node rowsElement = resultElement.getElementsByTagName("rows").item(0);
 		int rowsCount = Integer.parseInt(rowsElement.getTextContent());
