@@ -55,7 +55,8 @@ public class ApiClient implements IApiClient {
 		return placement;
 	}
 
-	Element callApi(String object, String action, String actionObject, String... additional) throws ClientProtocolException, IOException, UnsupportedOperationException, SAXException, ParserConfigurationException, XPathExpressionException, AdFoxResultException {
+	Element callApiRaw(String object, String action, String actionObject, String... additional) throws ClientProtocolException, IOException, UnsupportedOperationException, SAXException, ParserConfigurationException, XPathExpressionException,
+			AdFoxResultException {
 		String uri = "https://login.adfox.ru/API.php?loginAccount=" + login + "&loginPassword=" + passSha256;
 		if (object != null)
 			uri += "&object=" + object;
@@ -89,7 +90,12 @@ public class ApiClient implements IApiClient {
 			throw new AdFoxResultException("Can't find result status code");
 		}
 
-		Object resultElement = xPath.evaluate("/response/result", doc.getDocumentElement(), XPathConstants.NODE);
+		return (Element) doc.getDocumentElement();
+	}
+
+	Element callApi(String object, String action, String actionObject, String... additional) throws ClientProtocolException, IOException, UnsupportedOperationException, SAXException, ParserConfigurationException, XPathExpressionException, AdFoxResultException {
+		XPath xPath = XPathFactory.newInstance().newXPath();
+		Object resultElement = xPath.evaluate("/response/result", callApiRaw(object, action, actionObject, additional), XPathConstants.NODE);
 		return (Element) resultElement;
 	}
 
@@ -139,6 +145,25 @@ public class ApiClient implements IApiClient {
 			T item = c.newInstance();
 			item.load(resultElement);
 			return item;
+		} catch (Throwable e) {
+			throw new AdFoxParsingException(e);
+		}
+	}
+
+	int addItem(String object, String actionObject, String... additional) throws AdFoxException {
+		Element resultElement;
+		try {
+			resultElement = callApiRaw(object, "add", actionObject, additional);
+		} catch (AdFoxException e) {
+			throw e;
+		} catch (Throwable e) {
+			throw new AdFoxCallException(e);
+		}
+
+		try {
+			XPath xPath = XPathFactory.newInstance().newXPath();
+			Node node = (Node) xPath.evaluate("/response/status/ID", resultElement, XPathConstants.NODE);
+			return Integer.parseInt(node.getTextContent());
 		} catch (Throwable e) {
 			throw new AdFoxParsingException(e);
 		}

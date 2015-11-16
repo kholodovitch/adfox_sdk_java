@@ -2,20 +2,12 @@ package com.github.kholodovitch.adfox;
 
 import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
 import org.junit.Test;
 
-public class TestBannerPlace {
-	private String login;
-	private String passSha256;
-	private ApiClient client;
+public class TestBannerPlace extends BaseTest {
 
-	@Before
-	public void setUp() throws Exception {
-		login = System.getenv("ADFOX_LOGIN");
-		passSha256 = System.getenv("ADFOX_PASS_SHA256");
-
-		client = new ApiClient(login, passSha256);
+	public TestBannerPlace() throws Exception {
+		super();
 	}
 
 	@Test
