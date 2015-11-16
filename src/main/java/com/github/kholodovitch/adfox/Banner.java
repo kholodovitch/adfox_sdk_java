@@ -38,10 +38,7 @@ public class Banner extends BaseObject {
 	private String dateEnd;
 	private String dateAdded;
 
-	public Banner() {
-	}
-
-	public Banner(Element item) {
+	public void load(Element item) {
 		ID = getStringContent(item, "ID");
 		name = getStringContent(item, "name");
 		campaignID = getStringContent(item, "campaignID");

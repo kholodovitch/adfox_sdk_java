@@ -13,11 +13,16 @@ public class BannerPlacements extends BaseObject {
 	private String isWebsiteOn;
 	private String websiteID;
 
-	public BannerPlacements() {
-	}
-
-	public BannerPlacements(Element item) {
-		// TODO Auto-generated constructor stub
+	public void load(Element item) {
+		sectionID = getStringContent(item, "sectionID");
+		isSectionOn = getStringContent(item, "isSectionOn");
+		websiteName = getStringContent(item, "websiteName");
+		sectionName = getStringContent(item, "sectionName");
+		placeID = getStringContent(item, "placeID");
+		placeName = getStringContent(item, "placeName");
+		isPlaceOn = getStringContent(item, "isPlaceOn");
+		isWebsiteOn = getStringContent(item, "isWebsiteOn");
+		websiteID = getStringContent(item, "websiteID");
 	}
 
 	public String getSectionID() {

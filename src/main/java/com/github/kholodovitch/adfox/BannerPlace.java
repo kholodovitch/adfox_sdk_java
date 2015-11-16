@@ -2,16 +2,17 @@ package com.github.kholodovitch.adfox;
 
 import org.w3c.dom.Element;
 
-public class BannerPlace {
+public class BannerPlace extends BaseObject {
 	private String HTML;
 	private String flashURL;
 	private String hitURL;
 	private String imageURL;
 
-	public BannerPlace() {
-	}
-
-	public BannerPlace(Element item) {
+	public void load(Element item) {
+		HTML = getStringContent(item, "HTML");
+		flashURL = getStringContent(item, "flashURL");
+		hitURL = getStringContent(item, "hitURL");
+		imageURL = getStringContent(item, "imageURL");
 	}
 
 	public String getHTML() {

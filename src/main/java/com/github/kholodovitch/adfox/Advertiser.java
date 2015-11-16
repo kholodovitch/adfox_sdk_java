@@ -1,6 +1,8 @@
 package com.github.kholodovitch.adfox;
 
-public class Advertiser {
+import org.w3c.dom.Element;
+
+public class Advertiser extends BaseObject {
 	private String lastName;
 	private String phone;
 	private String fax;
@@ -17,6 +19,25 @@ public class Advertiser {
 	private String account;
 	private String ZIPCode;
 	private String firstName;
+
+	public void load(Element item) {
+		lastName = getStringContent(item, "lastName");
+		phone = getStringContent(item, "phone");
+		fax = getStringContent(item, "fax");
+		state = getStringContent(item, "state");
+		dateAdded = getStringContent(item, "dateAdded");
+		address1 = getStringContent(item, "address1");
+		address2 = getStringContent(item, "address2");
+		country = getStringContent(item, "country");
+		city = getStringContent(item, "city");
+		isByAssistantCreated = getStringContent(item, "isByAssistantCreated");
+		company = getStringContent(item, "company");
+		eMail = getStringContent(item, "eMail");
+		ID = getStringContent(item, "ID");
+		account = getStringContent(item, "account");
+		ZIPCode = getStringContent(item, "ZIPCode");
+		firstName = getStringContent(item, "firstName");
+	}
 
 	public String getLastName() {
 		return lastName;

@@ -4,7 +4,7 @@ import org.w3c.dom.Element;
 
 import com.github.kholodovitch.adfox.interfaces.ILoadFromXml;
 
-public class Campaign {
+public class Campaign extends BaseObject {
 	private String maxImpressionsPerHour;
 	private String clicksPerHour;
 	private String type;
@@ -55,6 +55,59 @@ public class Campaign {
 	private String isSession;
 	private String additionalAdvertiserAccounts;
 	private String pricingModelID;
+
+	public void load(Element item) {
+		maxImpressionsPerHour = getStringContent(item, "maxImpressionsPerHour");
+		clicksPerHour = getStringContent(item, "clicksPerHour");
+		type = getStringContent(item, "type");
+		assistantAccount = getStringContent(item, "assistantAccount");
+		impressionsSmoothTypeID = getStringContent(item, "impressionsSmoothTypeID");
+		tracingPointsType = getStringContent(item, "tracingPointsType");
+		advertiserAccount = getStringContent(item, "advertiserAccount");
+		level = getStringContent(item, "level");
+		priority = getStringContent(item, "priority");
+		ID = getStringContent(item, "ID");
+		itemQty = getStringContent(item, "itemQty");
+		isTrafficSmooth = getStringContent(item, "isTrafficSmooth");
+		impressionsAll = getStringContent(item, "impressionsAll");
+		advertiserID = getStringContent(item, "advertiserID");
+		maxClicks = getStringContent(item, "maxClicks");
+		status = getStringContent(item, "status");
+		pricingTypeID = getStringContent(item, "pricingTypeID");
+		maxClicksPerHour = getStringContent(item, "maxClicksPerHour");
+		outerMarkID = getStringContent(item, "outerMarkID");
+		dateStart = getStringContent(item, "dateStart");
+		impressionsPerHour = getStringContent(item, "impressionsPerHour");
+		dateFinished = getStringContent(item, "dateFinished");
+		bannerSequence = getStringContent(item, "bannerSequence");
+		impressionsMethodID = getStringContent(item, "impressionsMethodID");
+		maxClicksPerDay = getStringContent(item, "maxClicksPerDay");
+		superCampaignName = getStringContent(item, "superCampaignName");
+		paymentMethodID = getStringContent(item, "paymentMethodID");
+		assistantID = getStringContent(item, "assistantID");
+		scenarioPeriodID = getStringContent(item, "scenarioPeriodID");
+		dateAdded = getStringContent(item, "dateAdded");
+		dateEnd = getStringContent(item, "dateEnd");
+		pricingModel = getStringContent(item, "pricingModel");
+		impressionsToday = getStringContent(item, "impressionsToday");
+		itemCost = getStringContent(item, "itemCost");
+		name = getStringContent(item, "name");
+		additionalAssistantAccounts = getStringContent(item, "additionalAssistantAccounts");
+		mainPointID = getStringContent(item, "mainPointID");
+		superCampaignID = getStringContent(item, "superCampaignID");
+		targetingProfileID = getStringContent(item, "targetingProfileID");
+		maxImpressions = getStringContent(item, "maxImpressions");
+		clicksSmoothTypeID = getStringContent(item, "clicksSmoothTypeID");
+		maxImpressionsPerDay = getStringContent(item, "maxImpressionsPerDay");
+		additionalAssistantIDs = getStringContent(item, "additionalAssistantIDs");
+		clicksAll = getStringContent(item, "clicksAll");
+		additionalAdvertiserIDs = getStringContent(item, "additionalAdvertiserIDs");
+		clicksToday = getStringContent(item, "clicksToday");
+		sequence = getStringContent(item, "sequence");
+		isSession = getStringContent(item, "isSession");
+		additionalAdvertiserAccounts = getStringContent(item, "additionalAdvertiserAccounts");
+		pricingModelID = getStringContent(item, "pricingModelID");
+	}
 
 	public String getMaxImpressionsPerHour() {
 		return maxImpressionsPerHour;
