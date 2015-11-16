@@ -2,8 +2,6 @@ package com.github.kholodovitch.adfox;
 
 import org.w3c.dom.Element;
 
-import com.github.kholodovitch.adfox.interfaces.ILoadFromXml;
-
 public class Campaign extends BaseObject {
 	private String maxImpressionsPerHour;
 	private String clicksPerHour;

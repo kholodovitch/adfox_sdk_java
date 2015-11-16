@@ -1,27 +1,19 @@
 package com.github.kholodovitch.adfox.interfaces;
 
-import java.io.IOException;
 import java.util.List;
-
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPathExpressionException;
-
-import org.apache.http.client.ClientProtocolException;
-import org.xml.sax.SAXException;
 
 import com.github.kholodovitch.adfox.Advertiser;
 import com.github.kholodovitch.adfox.Banner;
 import com.github.kholodovitch.adfox.BannerPlacements;
 import com.github.kholodovitch.adfox.Campaign;
-import com.github.kholodovitch.adfox.exceptions.AdFoxResultException;
+import com.github.kholodovitch.adfox.exceptions.AdFoxException;
 
 public interface IActionAccountList {
-	List<Advertiser> advertiser() throws ClientProtocolException, UnsupportedOperationException, XPathExpressionException, IOException, SAXException, ParserConfigurationException, AdFoxResultException, InstantiationException, IllegalAccessException;
+	List<Advertiser> advertiser() throws AdFoxException;
 
-	List<Banner> banner() throws ClientProtocolException, UnsupportedOperationException, XPathExpressionException, IOException, SAXException, ParserConfigurationException, AdFoxResultException, InstantiationException, IllegalAccessException;
+	List<Banner> banner() throws AdFoxException;
 
-	List<BannerPlacements> bannerPlacements(long bannerId) throws XPathExpressionException, ClientProtocolException, UnsupportedOperationException, IOException, SAXException, ParserConfigurationException, AdFoxResultException, InstantiationException,
-			IllegalAccessException;
+	List<BannerPlacements> bannerPlacements(long bannerId) throws AdFoxException;
 
-	List<Campaign> campaign() throws ClientProtocolException, UnsupportedOperationException, XPathExpressionException, IOException, SAXException, ParserConfigurationException, AdFoxResultException, InstantiationException, IllegalAccessException;
+	List<Campaign> campaign() throws AdFoxException;
 }
