@@ -9,6 +9,10 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.github.kholodovitch.adfox.exceptions.AdFoxResultException;
+import com.github.kholodovitch.adfox.objects.Advertiser;
+import com.github.kholodovitch.adfox.objects.Banner;
+import com.github.kholodovitch.adfox.objects.BannerPlacements;
+import com.github.kholodovitch.adfox.objects.Campaign;
 
 public class TestMain {
 

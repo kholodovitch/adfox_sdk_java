@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import org.junit.Test;
 
+import com.github.kholodovitch.adfox.objects.Advertiser;
+
 public class TestAdvertiser extends BaseTest {
 
 	public TestAdvertiser() throws Exception {

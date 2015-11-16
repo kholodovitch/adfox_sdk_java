@@ -2,6 +2,7 @@ package com.github.kholodovitch.adfox;
 
 import com.github.kholodovitch.adfox.exceptions.AdFoxException;
 import com.github.kholodovitch.adfox.interfaces.IActionPlacementInfo;
+import com.github.kholodovitch.adfox.objects.BannerPlace;
 
 public class ActionPlacementInfo implements IActionPlacementInfo {
 

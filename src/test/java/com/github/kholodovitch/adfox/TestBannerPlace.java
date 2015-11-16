@@ -4,6 +4,10 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+import com.github.kholodovitch.adfox.objects.Banner;
+import com.github.kholodovitch.adfox.objects.BannerPlace;
+import com.github.kholodovitch.adfox.objects.BannerPlacements;
+
 public class TestBannerPlace extends BaseTest {
 
 	public TestBannerPlace() throws Exception {

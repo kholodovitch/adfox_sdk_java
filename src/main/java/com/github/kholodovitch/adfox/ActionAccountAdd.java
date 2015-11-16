@@ -4,6 +4,7 @@ import org.apache.commons.lang3.StringUtils;
 
 import com.github.kholodovitch.adfox.exceptions.AdFoxException;
 import com.github.kholodovitch.adfox.interfaces.IActionAccountAdd;
+import com.github.kholodovitch.adfox.objects.Advertiser;
 
 public class ActionAccountAdd implements IActionAccountAdd {
 

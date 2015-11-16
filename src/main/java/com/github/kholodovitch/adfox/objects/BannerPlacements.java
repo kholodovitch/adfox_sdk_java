@@ -1,4 +1,4 @@
-package com.github.kholodovitch.adfox;
+package com.github.kholodovitch.adfox.objects;
 
 import org.w3c.dom.Element;
 
@@ -95,11 +95,5 @@ public class BannerPlacements extends BaseObject {
 
 	public void setWebsiteID(String websiteID) {
 		this.websiteID = websiteID;
-	}
-
-	@Override
-	public String toString() {
-		return "ClassPojo [sectionID = " + sectionID + ", isSectionOn = " + isSectionOn + ", websiteName = " + websiteName + ", sectionName = " + sectionName + ", placeID = " + placeID + ", placeName = " + placeName + ", isPlaceOn = " + isPlaceOn
-				+ ", isWebsiteOn = " + isWebsiteOn + ", websiteID = " + websiteID + "]";
 	}
 }

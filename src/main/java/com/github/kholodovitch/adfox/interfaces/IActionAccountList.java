@@ -2,11 +2,11 @@ package com.github.kholodovitch.adfox.interfaces;
 
 import java.util.List;
 
-import com.github.kholodovitch.adfox.Advertiser;
-import com.github.kholodovitch.adfox.Banner;
-import com.github.kholodovitch.adfox.BannerPlacements;
-import com.github.kholodovitch.adfox.Campaign;
 import com.github.kholodovitch.adfox.exceptions.AdFoxException;
+import com.github.kholodovitch.adfox.objects.Advertiser;
+import com.github.kholodovitch.adfox.objects.Banner;
+import com.github.kholodovitch.adfox.objects.BannerPlacements;
+import com.github.kholodovitch.adfox.objects.Campaign;
 
 public interface IActionAccountList {
 	List<Advertiser> advertiser() throws AdFoxException;

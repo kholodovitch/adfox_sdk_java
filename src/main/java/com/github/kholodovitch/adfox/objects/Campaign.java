@@ -1,4 +1,4 @@
-package com.github.kholodovitch.adfox;
+package com.github.kholodovitch.adfox.objects;
 
 import org.w3c.dom.Element;
 
@@ -505,18 +505,5 @@ public class Campaign extends BaseObject {
 
 	public void setPricingModelID(String pricingModelID) {
 		this.pricingModelID = pricingModelID;
-	}
-
-	@Override
-	public String toString() {
-		return "ClassPojo [maxImpressionsPerHour = " + maxImpressionsPerHour + ", clicksPerHour = " + clicksPerHour + ", type = " + type + ", assistantAccount = " + assistantAccount + ", impressionsSmoothTypeID = " + impressionsSmoothTypeID
-				+ ", tracingPointsType = " + tracingPointsType + ", advertiserAccount = " + advertiserAccount + ", level = " + level + ", priority = " + priority + ", ID = " + ID + ", itemQty = " + itemQty + ", isTrafficSmooth = " + isTrafficSmooth
-				+ ", impressionsAll = " + impressionsAll + ", advertiserID = " + advertiserID + ", maxClicks = " + maxClicks + ", status = " + status + ", pricingTypeID = " + pricingTypeID + ", maxClicksPerHour = " + maxClicksPerHour + ", outerMarkID = "
-				+ outerMarkID + ", dateStart = " + dateStart + ", impressionsPerHour = " + impressionsPerHour + ", dateFinished = " + dateFinished + ", bannerSequence = " + bannerSequence + ", impressionsMethodID = " + impressionsMethodID
-				+ ", maxClicksPerDay = " + maxClicksPerDay + ", superCampaignName = " + superCampaignName + ", paymentMethodID = " + paymentMethodID + ", assistantID = " + assistantID + ", scenarioPeriodID = " + scenarioPeriodID + ", dateAdded = " + dateAdded
-				+ ", dateEnd = " + dateEnd + ", pricingModel = " + pricingModel + ", impressionsToday = " + impressionsToday + ", itemCost = " + itemCost + ", name = " + name + ", additionalAssistantAccounts = " + additionalAssistantAccounts
-				+ ", mainPointID = " + mainPointID + ", superCampaignID = " + superCampaignID + ", targetingProfileID = " + targetingProfileID + ", maxImpressions = " + maxImpressions + ", clicksSmoothTypeID = " + clicksSmoothTypeID
-				+ ", maxImpressionsPerDay = " + maxImpressionsPerDay + ", additionalAssistantIDs = " + additionalAssistantIDs + ", clicksAll = " + clicksAll + ", additionalAdvertiserIDs = " + additionalAdvertiserIDs + ", clicksToday = " + clicksToday
-				+ ", sequence = " + sequence + ", isSession = " + isSession + ", additionalAdvertiserAccounts = " + additionalAdvertiserAccounts + ", pricingModelID = " + pricingModelID + "]";
 	}
 }

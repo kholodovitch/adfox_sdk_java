@@ -1,4 +1,4 @@
-package com.github.kholodovitch.adfox;
+package com.github.kholodovitch.adfox.objects;
 
 import org.w3c.dom.Element;
 
@@ -165,11 +165,5 @@ public class Advertiser extends BaseObject {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
-	}
-
-	@Override
-	public String toString() {
-		return "ClassPojo [lastName = " + lastName + ", phone = " + phone + ", fax = " + fax + ", state = " + state + ", dateAdded = " + dateAdded + ", address1 = " + address1 + ", address2 = " + address2 + ", country = " + country + ", city = " + city
-				+ ", isByAssistantCreated = " + isByAssistantCreated + ", company = " + company + ", eMail = " + eMail + ", ID = " + ID + ", account = " + account + ", ZIPCode = " + ZIPCode + ", firstName = " + firstName + "]";
 	}
 }

@@ -4,6 +4,10 @@ import java.util.List;
 
 import com.github.kholodovitch.adfox.exceptions.AdFoxException;
 import com.github.kholodovitch.adfox.interfaces.IActionAccountList;
+import com.github.kholodovitch.adfox.objects.Advertiser;
+import com.github.kholodovitch.adfox.objects.Banner;
+import com.github.kholodovitch.adfox.objects.BannerPlacements;
+import com.github.kholodovitch.adfox.objects.Campaign;
 
 public class ActionAccountList implements IActionAccountList {
 

@@ -4,6 +4,12 @@ import java.beans.IntrospectionException;
 
 import org.junit.Test;
 
+import com.github.kholodovitch.adfox.objects.Advertiser;
+import com.github.kholodovitch.adfox.objects.Banner;
+import com.github.kholodovitch.adfox.objects.BannerPlace;
+import com.github.kholodovitch.adfox.objects.BannerPlacements;
+import com.github.kholodovitch.adfox.objects.Campaign;
+
 public class TestJavaBeanProperties {
 
 	@Test

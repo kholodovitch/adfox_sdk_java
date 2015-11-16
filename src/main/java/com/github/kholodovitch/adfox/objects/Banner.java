@@ -1,4 +1,4 @@
-package com.github.kholodovitch.adfox;
+package com.github.kholodovitch.adfox.objects;
 
 import org.w3c.dom.Element;
 
