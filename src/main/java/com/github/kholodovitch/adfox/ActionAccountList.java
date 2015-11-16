@@ -1,26 +1,20 @@
 package com.github.kholodovitch.adfox;
 
-import java.io.IOException;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.List;
 
-import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.xpath.XPath;
 import javax.xml.xpath.XPathConstants;
-import javax.xml.xpath.XPathExpressionException;
 import javax.xml.xpath.XPathFactory;
 
-import org.apache.http.client.ClientProtocolException;
 import org.w3c.dom.Element;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
-import org.xml.sax.SAXException;
 
 import com.github.kholodovitch.adfox.exceptions.AdFoxCallException;
 import com.github.kholodovitch.adfox.exceptions.AdFoxException;
 import com.github.kholodovitch.adfox.exceptions.AdFoxParsingException;
-import com.github.kholodovitch.adfox.exceptions.AdFoxResultException;
 import com.github.kholodovitch.adfox.interfaces.IActionAccountList;
 import com.github.kholodovitch.adfox.interfaces.ILoadFromXml;
 
@@ -52,6 +46,8 @@ public class ActionAccountList implements IActionAccountList {
 		Element resultElement;
 		try {
 			resultElement = apiClient.callApi(object, action, actionObject, additional);
+		} catch (AdFoxException e) {
+			throw e;
 		} catch (Throwable e) {
 			throw new AdFoxCallException(e);
 		}

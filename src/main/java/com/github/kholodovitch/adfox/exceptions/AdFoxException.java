@@ -7,4 +7,9 @@ public class AdFoxException extends Exception {
 	public AdFoxException(Throwable e) {
 		super(e);
 	}
+
+	public AdFoxException(String msg) {
+		super(msg);
+	}
+
 }
