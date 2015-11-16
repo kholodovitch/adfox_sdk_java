@@ -12,11 +12,14 @@ public class TestMain {
 
 	private String login;
 	private String passSha256;
+	private ApiClient client;
 
 	@Before
 	public void setUp() throws Exception {
 		login = System.getenv("ADFOX_LOGIN");
 		passSha256 = System.getenv("ADFOX_PASS_SHA256");
+
+		client = new ApiClient(login, passSha256);
 	}
 
 	@After
@@ -24,12 +27,28 @@ public class TestMain {
 	}
 
 	@Test
-	public void test() throws Exception {
-		ApiClient client = new ApiClient(login, passSha256);
+	public void testAccountListAdvertiser() throws Exception {
+		List<Advertiser> advertisers = client.account().list().advertiser();
+
+		assertTrue(advertisers != null);
+		assertTrue(advertisers.size() > 0);
+	}
+
+	@Test
+	public void testAccountListBanner() throws Exception {
 		List<Banner> banner = client.account().list().banner();
 
 		assertTrue(banner != null);
 		assertTrue(banner.size() > 0);
+	}
+
+	@Test
+	public void testAccountListBannerPlacements() throws Exception {
+		List<Banner> banner = client.account().list().banner();
+		List<BannerPlacements> bannerPlacements = client.account().list().bannerPlacements(banner.get(0).getID());
+
+		assertTrue(bannerPlacements != null);
+		assertTrue(bannerPlacements.size() > 0);
 	}
 
 }

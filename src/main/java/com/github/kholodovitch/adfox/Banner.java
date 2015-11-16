@@ -3,7 +3,7 @@ package com.github.kholodovitch.adfox;
 import org.w3c.dom.Element;
 
 public class Banner extends BaseObject {
-	private String ID;
+	private int ID;
 	private String name;
 	private String campaignID;
 	private String campaignName;
@@ -39,7 +39,7 @@ public class Banner extends BaseObject {
 	private String dateAdded;
 
 	public void load(Element item) {
-		ID = getStringContent(item, "ID");
+		ID = getIntContent(item, "ID");
 		name = getStringContent(item, "name");
 		campaignID = getStringContent(item, "campaignID");
 		campaignName = getStringContent(item, "campaignName");
@@ -75,11 +75,11 @@ public class Banner extends BaseObject {
 		dateAdded = getStringContent(item, "dateAdded");
 	}
 
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
 
-	public void setID(String iD) {
+	public void setID(int iD) {
 		ID = iD;
 	}
 
