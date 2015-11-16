@@ -7,7 +7,7 @@ public class BannerPlacements extends BaseObject {
 	private String isSectionOn;
 	private String websiteName;
 	private String sectionName;
-	private String placeID;
+	private int placeID;
 	private String placeName;
 	private String isPlaceOn;
 	private String isWebsiteOn;
@@ -18,7 +18,7 @@ public class BannerPlacements extends BaseObject {
 		isSectionOn = getStringContent(item, "isSectionOn");
 		websiteName = getStringContent(item, "websiteName");
 		sectionName = getStringContent(item, "sectionName");
-		placeID = getStringContent(item, "placeID");
+		placeID = getIntContent(item, "placeID");
 		placeName = getStringContent(item, "placeName");
 		isPlaceOn = getStringContent(item, "isPlaceOn");
 		isWebsiteOn = getStringContent(item, "isWebsiteOn");
@@ -57,11 +57,11 @@ public class BannerPlacements extends BaseObject {
 		this.sectionName = sectionName;
 	}
 
-	public String getPlaceID() {
+	public int getPlaceID() {
 		return placeID;
 	}
 
-	public void setPlaceID(String placeID) {
+	public void setPlaceID(int placeID) {
 		this.placeID = placeID;
 	}
 
