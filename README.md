@@ -8,222 +8,222 @@ Java implementation of client to AdFox API
 
 ### account
   * add
-    * superCampaign
-    * campaign
+    * ~~superCampaign~~
+    * ~~campaign~~
     * advertiser
-    * webmaster
-    * assistant
-    * website
-    * zone
-    * place
-    * adNetworkWebsite
-    * position
-    * bannerType
-    * banner
-    * category
+    * ~~webmaster~~
+    * ~~assistant~~
+    * ~~website~~
+    * ~~zone~~
+    * ~~place~~
+    * ~~adNetworkWebsite~~
+    * ~~position~~
+    * ~~bannerType~~
+    * ~~banner~~
+    * ~~category~~
   * list
     * advertiser
-    * webmaster
-    * assistant
-    * superCampaign
+    * ~~webmaster~~
+    * ~~assistant~~
+    * ~~superCampaign~~
     * campaign
-    * targetingProfile
-    * bannerType
-    * website
-    * zone
-    * place
-    * adNetwork
-    * adNetworkWebsitePlace
-    * category
+    * ~~targetingProfile~~
+    * ~~bannerType~~
+    * ~~website~~
+    * ~~zone~~
+    * ~~place~~
+    * ~~adNetwork~~
+    * ~~adNetworkWebsitePlace~~
+    * ~~category~~
     * banner
-    * bannerType
+    * ~~bannerType~~
     * bannerPlacements
-    * request
-    * defaultBanner
-    * tracingPoint
-    * tracingPoint2
-    * userCriterias
-    * activeBanners
-    * bannerPlaceReport
-    * message 
-  * delete
-    * superCampaign
-    * campaign
-    * banner
-    * place
-    * zone
-    * website
-    * template
-    * bannerType
-    * tracingPoint
-    * category
-    * user
-    * assistant
-  * modify
-    * category
-  * report
-    * report1
-    * report2
-    * report3
-  * changePassword
-    * currentPassword
-    * newPassword
-    * userID
-    * roleFlag
-  * auth
-  * utility
-    * geoTree
+    * ~~request~~
+    * ~~defaultBanner~~
+    * ~~tracingPoint~~
+    * ~~tracingPoint2~~
+    * ~~userCriterias~~
+    * ~~activeBanners~~
+    * ~~bannerPlaceReport~~
+    * ~~message~~
+  * ~~delete~~
+    * ~~superCampaign~~
+    * ~~campaign~~
+    * ~~banner~~
+    * ~~place~~
+    * ~~zone~~
+    * ~~website~~
+    * ~~template~~
+    * ~~bannerType~~
+    * ~~tracingPoint~~
+    * ~~category~~
+    * ~~user~~
+    * ~~assistant~~
+  * ~~modify~~
+    * ~~category~~
+  * ~~report~~
+    * ~~report1~~
+    * ~~report2~~
+    * ~~report3~~
+  * ~~changePassword~~
+    * ~~currentPassword~~
+    * ~~newPassword~~
+    * ~~userID~~
+    * ~~roleFlag~~
+  * ~~auth~~
+  * ~~utility~~
+    * ~~geoTree~~
 
 ### superCampaign
-  * modify
-  * additionalUsers
-    * addAdvertiser
-    * deleteAdvertiser
-    * addAssistant
-    * deleteAssistant
+  * ~~modify~~
+  * ~~additionalUsers~~
+    * ~~addAdvertiser~~
+    * ~~deleteAdvertiser~~
+    * ~~addAssistant~~
+    * ~~deleteAssistant~~
 
 ### campaign
-  * upload
-    * URL
-  * modify
-  * list
-    * banner
-  * info
-    * placement
-    * placement2
-    * banner
-    * report1
-    * report2
-    * report3
-    * targeting
-  * placing
-    * website
-    * zone
-    * place
-    * adNetwork
-    * adNetworkCategory
-    * adNetworkWebsite
-  * target
-    * targetingTime
-    * targetingFrequency
-    * targetingBehavior
-    * targetingGeo
-    * targetingSearch
-    * targetingUser
-    * targetingKeywords
-    * targetingSocdem
-  * targetWebsite
-    * targetingTime
-    * targetingFrequency
-    * targetingBehavior
-    * targetingGeo
-    * targetingSearch
-    * targetingUser
-    * targetingKeywords
-  * targetZone
-    * targetingTime
-    * targetingFrequency
-    * targetingBehavior
-    * targetingGeo
-    * targetingSearch
-    * targetingUser
-    * targetingKeywords
-  * targetPlace
-    * targetingTime
-    * targetingFrequency
-    * targetingBehavior
-    * targetingGeo
-    * targetingSearch
-    * targetingUser
-    * targetingKeywords
-  * additionalUsers
-    * addAdvertiser
-    * deleteAdvertiser
-    * addAssistant
-    * deleteAssistant
+  * ~~upload~~
+    * ~~URL~~
+  * ~~modify~~
+  * ~~list~~
+    * ~~banner~~
+  * ~~info~~
+    * ~~placement~~
+    * ~~placement2~~
+    * ~~banner~~
+    * ~~report1~~
+    * ~~report2~~
+    * ~~report3~~
+    * ~~targeting~~
+  * ~~placing~~
+    * ~~website~~
+    * ~~zone~~
+    * ~~place~~
+    * ~~adNetwork~~
+    * ~~adNetworkCategory~~
+    * ~~adNetworkWebsite~~
+  * ~~target~~
+    * ~~targetingTime~~
+    * ~~targetingFrequency~~
+    * ~~targetingBehavior~~
+    * ~~targetingGeo~~
+    * ~~targetingSearch~~
+    * ~~targetingUser~~
+    * ~~targetingKeywords~~
+    * ~~targetingSocdem~~
+  * ~~targetWebsite~~
+    * ~~targetingTime~~
+    * ~~targetingFrequency~~
+    * ~~targetingBehavior~~
+    * ~~targetingGeo~~
+    * ~~targetingSearch~~
+    * ~~targetingUser~~
+    * ~~targetingKeywords~~
+  * ~~targetZone~~
+    * ~~targetingTime~~
+    * ~~targetingFrequency~~
+    * ~~targetingBehavior~~
+    * ~~targetingGeo~~
+    * ~~targetingSearch~~
+    * ~~targetingUser~~
+    * ~~targetingKeywords~~
+  * ~~targetPlace~~
+    * ~~targetingTime~~
+    * ~~targetingFrequency~~
+    * ~~targetingBehavior~~
+    * ~~targetingGeo~~
+    * ~~targetingSearch~~
+    * ~~targetingUser~~
+    * ~~targetingKeywords~~
+  * ~~additionalUsers~~
+    * ~~addAdvertiser~~
+    * ~~deleteAdvertiser~~
+    * ~~addAssistant~~
+    * ~~deleteAssistant~~
 
 ### banner
-  * modify
-    * event
-    * placement
-  * info
-    * report1
-    * report2
-    * report3
-    * bannerFields
-    * targeting
-  * target
-    * targetingTime
-    * targetingFrequency
-    * targetingBehavior
-    * targetingGeo
-    * targetingSearch
-    * targetingKeywords
-    * targetingUser
+  * ~~modify~~
+    * ~~event~~
+    * ~~placement~~
+  * ~~info~~
+    * ~~report1~~
+    * ~~report2~~
+    * ~~report3~~
+    * ~~bannerFields~~
+    * ~~targeting~~
+  * ~~target~~
+    * ~~targetingTime~~
+    * ~~targetingFrequency~~
+    * ~~targetingBehavior~~
+    * ~~targetingGeo~~
+    * ~~targetingSearch~~
+    * ~~targetingKeywords~~
+    * ~~targetingUser~~
 
 ### website
-  * modify
+  * ~~modify~~
 
 ### adNetworkWebsite
-  * modify
-  * info
-    * report1
-    * report2
-    * report3
+  * ~~modify~~
+  * ~~info~~
+    * ~~report1~~
+    * ~~report2~~
+    * ~~report3~~
 
 ### advertiser
-  * availableReports
+  * ~~availableReports~~
 
 ### webmaster
-  * modify
-  * info
-    * balance
+  * ~~modify~~
+  * ~~info~~
+    * ~~balance~~
 
 ### assistant
-  * modify
+  * ~~modify~~
 
 ### zone
-  * modify
+  * ~~modify~~
 
 ### place
-  * modify
-  * updateDefaultBanner
-  * info
-    * report1
-  * listActiveBanners
+  * ~~modify~~
+  * ~~updateDefaultBanner~~
+  * ~~info~~
+    * ~~report1~~
+  * ~~listActiveBanners~~
 
 ### position
-  * modify
+  * ~~modify~~
 
 ### bannerType
-  * modify
-  * list
-    * template
-  * updateDefaultBanner
+  * ~~modify~~
+  * ~~list~~
+    * ~~template~~
+  * ~~updateDefaultBanner~~
 
 ### placement
 
 ### adNetwork
-  * pricing
-    * adNetwork
-    * ... or empty
-    * category
-    * website
+  * ~~pricing~~
+    * ~~adNetwork~~
+    * ~~... or empty~~
+    * ~~category~~
+    * ~~website~~
 
 ### code
-  * info
-    * place
-    * campaignPlace
-    * website
-    * adNetworkWebsite
+  * ~~info~~
+    * ~~place~~
+    * ~~campaignPlace~~
+    * ~~website~~
+    * ~~adNetworkWebsite~~
 
 ### tracingPoint
-  * modify
-  * getCode
+  * ~~modify~~
+  * ~~getCode~~
 
 ### userCriteria
-  * modify
-  * addValue
-  * modifyValue
-  * removeValue
-  * listValues
+  * ~~modify~~
+  * ~~addValue~~
+  * ~~modifyValue~~
+  * ~~removeValue~~
+  * ~~listValues~~
