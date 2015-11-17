@@ -32,11 +32,13 @@ import com.github.kholodovitch.adfox.exceptions.AdFoxResultException;
 import com.github.kholodovitch.adfox.interfaces.IApiClient;
 import com.github.kholodovitch.adfox.interfaces.ILoadFromXml;
 import com.github.kholodovitch.adfox.interfaces.IObjectAccount;
+import com.github.kholodovitch.adfox.interfaces.IObjectCampaign;
 import com.github.kholodovitch.adfox.interfaces.IObjectPlacement;
 
 public class ApiClient implements IApiClient {
 
 	private IObjectAccount account = new ObjectAccount(this);
+	private IObjectCampaign campaign = new ObjectCampaign(this);
 	private IObjectPlacement placement = new ObjectPlacement(this);
 
 	private String login;
@@ -49,6 +51,10 @@ public class ApiClient implements IApiClient {
 
 	public IObjectAccount account() {
 		return account;
+	}
+
+	public IObjectCampaign campaign() {
+		return campaign;
 	}
 
 	public IObjectPlacement placement() {

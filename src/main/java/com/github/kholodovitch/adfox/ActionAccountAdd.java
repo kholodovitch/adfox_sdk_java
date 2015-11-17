@@ -5,6 +5,8 @@ import org.apache.commons.lang3.StringUtils;
 import com.github.kholodovitch.adfox.exceptions.AdFoxException;
 import com.github.kholodovitch.adfox.interfaces.IActionAccountAdd;
 import com.github.kholodovitch.adfox.objects.Advertiser;
+import com.github.kholodovitch.adfox.objects.Banner;
+import com.github.kholodovitch.adfox.objects.Campaign;
 
 public class ActionAccountAdd implements IActionAccountAdd {
 
@@ -30,6 +32,16 @@ public class ActionAccountAdd implements IActionAccountAdd {
 			throw new AdFoxException("advertiser.email is blank");
 
 		return apiClient.addItem("account", "advertiser", "password=" + passSha256, "account=" + account, "eMail=" + eMail);
+	}
+
+	public int campaign(Campaign campaign) throws AdFoxException {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	public int banner(Banner banner) throws AdFoxException {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 
 }
