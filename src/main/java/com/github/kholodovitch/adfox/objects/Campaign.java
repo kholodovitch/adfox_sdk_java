@@ -12,11 +12,11 @@ public class Campaign extends BaseObject {
 	private String advertiserAccount;
 	private String level;
 	private String priority;
-	private String ID;
+	private int ID;
 	private String itemQty;
 	private String isTrafficSmooth;
 	private String impressionsAll;
-	private String advertiserID;
+	private int advertiserID;
 	private String maxClicks;
 	private String status;
 	private String pricingTypeID;
@@ -64,11 +64,11 @@ public class Campaign extends BaseObject {
 		advertiserAccount = getStringContent(item, "advertiserAccount");
 		level = getStringContent(item, "level");
 		priority = getStringContent(item, "priority");
-		ID = getStringContent(item, "ID");
+		ID = getIntContent(item, "ID");
 		itemQty = getStringContent(item, "itemQty");
 		isTrafficSmooth = getStringContent(item, "isTrafficSmooth");
 		impressionsAll = getStringContent(item, "impressionsAll");
-		advertiserID = getStringContent(item, "advertiserID");
+		advertiserID = getIntContent(item, "advertiserID");
 		maxClicks = getStringContent(item, "maxClicks");
 		status = getStringContent(item, "status");
 		pricingTypeID = getStringContent(item, "pricingTypeID");
@@ -179,11 +179,11 @@ public class Campaign extends BaseObject {
 		this.priority = priority;
 	}
 
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
 
-	public void setID(String ID) {
+	public void setID(int ID) {
 		this.ID = ID;
 	}
 
@@ -211,11 +211,11 @@ public class Campaign extends BaseObject {
 		this.impressionsAll = impressionsAll;
 	}
 
-	public String getAdvertiserID() {
+	public int getAdvertiserID() {
 		return advertiserID;
 	}
 
-	public void setAdvertiserID(String advertiserID) {
+	public void setAdvertiserID(int advertiserID) {
 		this.advertiserID = advertiserID;
 	}
 

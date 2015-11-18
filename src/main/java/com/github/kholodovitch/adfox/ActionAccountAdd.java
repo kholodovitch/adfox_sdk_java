@@ -55,11 +55,13 @@ public class ActionAccountAdd implements IActionAccountAdd {
 		if (StringUtils.isEmpty(banner.getTemplateID())) {
 			params.add("bannerTypeID=" + banner.getBannerTypeID());
 			params.add("contentType=" + contentType.toString());
+			params.add("imageURL=" + banner.getImageURL());
+			params.add("hitURL=" + banner.getHitURL());
 		} else {
 			params.add("templateID=" + banner.getTemplateID());
 		}
 
-		return apiClient.addItem("account", "campaign", params.toArray(new String[0]));
+		return apiClient.addItem("account", "banner", params.toArray(new String[0]));
 	}
 
 }

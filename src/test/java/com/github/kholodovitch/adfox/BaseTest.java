@@ -1,6 +1,7 @@
 package com.github.kholodovitch.adfox;
 
 import java.security.MessageDigest;
+import java.util.UUID;
 
 public class BaseTest {
 	private String login;
@@ -15,7 +16,11 @@ public class BaseTest {
 		client = new ApiClient(login, passSha256);
 	}
 
-	public static String sha256(String base) {
+	protected String getRandomName() {
+		return "XXX_" + UUID.randomUUID().toString().substring(0, 6);
+	}
+
+	protected String sha256(String base) {
 		try {
 			MessageDigest digest = MessageDigest.getInstance("SHA-256");
 			byte[] hash = digest.digest(base.getBytes("UTF-8"));

@@ -5,11 +5,11 @@ import org.w3c.dom.Element;
 public class Banner extends BaseObject {
 	private int ID;
 	private String name;
-	private String campaignID;
+	private int campaignID;
 	private String campaignName;
 	private String campaignDateStart;
 	private String campaignDateEnd;
-	private String bannerTypeID;
+	private int bannerTypeID;
 	private String bannerTypeName;
 	private String status;
 	private String isUnplaced;
@@ -41,11 +41,11 @@ public class Banner extends BaseObject {
 	public void load(Element item) {
 		ID = getIntContent(item, "ID");
 		name = getStringContent(item, "name");
-		campaignID = getStringContent(item, "campaignID");
+		campaignID = getIntContent(item, "campaignID");
 		campaignName = getStringContent(item, "campaignName");
 		campaignDateStart = getStringContent(item, "campaignDateStart");
 		campaignDateEnd = getStringContent(item, "campaignDateEnd");
-		bannerTypeID = getStringContent(item, "bannerTypeID");
+		bannerTypeID = getIntContent(item, "bannerTypeID");
 		bannerTypeName = getStringContent(item, "bannerTypeName");
 		status = getStringContent(item, "status");
 		isUnplaced = getStringContent(item, "isUnplaced");
@@ -91,11 +91,11 @@ public class Banner extends BaseObject {
 		this.name = name;
 	}
 
-	public String getCampaignID() {
+	public int getCampaignID() {
 		return campaignID;
 	}
 
-	public void setCampaignID(String campaignID) {
+	public void setCampaignID(int campaignID) {
 		this.campaignID = campaignID;
 	}
 
@@ -123,11 +123,11 @@ public class Banner extends BaseObject {
 		this.campaignDateEnd = campaignDateEnd;
 	}
 
-	public String getBannerTypeID() {
+	public int getBannerTypeID() {
 		return bannerTypeID;
 	}
 
-	public void setBannerTypeID(String bannerTypeID) {
+	public void setBannerTypeID(int bannerTypeID) {
 		this.bannerTypeID = bannerTypeID;
 	}
 

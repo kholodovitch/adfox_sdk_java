@@ -17,7 +17,7 @@ public class TestAdvertiser extends BaseTest {
 	@Test
 	public void testAddAdvertiser() throws Exception {
 		Advertiser advertiser = new Advertiser();
-		advertiser.setAccount("XXX_" + UUID.randomUUID().toString().substring(0, 6));
+		advertiser.setAccount(getRandomName());
 		advertiser.setEMail("mail@example.com");
 
 		int advertiserId = client.account().add().advertiser(advertiser, sha256(UUID.randomUUID().toString()));

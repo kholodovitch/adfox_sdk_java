@@ -90,8 +90,14 @@ public class ApiClient implements IApiClient {
 		if (nodes != null && nodes.getLength() > 0) {
 			int resultCode = Integer.parseInt(nodes.item(0).getTextContent());
 			if (resultCode != 0) {
-				Node errorNode = (Node)xPath.evaluate("/response/status/error", doc, XPathConstants.NODE);
-				throw new AdFoxResultException("Can't result status code = " + resultCode + " (" + errorNode.getTextContent() + ")");
+				Node errorNode = (Node) xPath.evaluate("/response/status/error", doc, XPathConstants.NODE);
+				Node parameterNode = (Node) xPath.evaluate("/response/status/parameter", doc, XPathConstants.NODE);
+				String parameterDetails = null;
+				if (parameterNode != null)
+					parameterDetails = parameterNode.getTextContent();
+
+				String normilizedParameterDetails = parameterDetails != null ? (". Parameter: " + parameterDetails) : "";
+				throw new AdFoxResultException("Can't result status code = " + resultCode + " (" + errorNode.getTextContent() + normilizedParameterDetails + ")");
 			}
 		} else {
 			throw new AdFoxResultException("Can't find result status code");
