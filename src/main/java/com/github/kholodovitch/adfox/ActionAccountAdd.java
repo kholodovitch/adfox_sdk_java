@@ -1,5 +1,7 @@
 package com.github.kholodovitch.adfox;
 
+import java.util.ArrayList;
+
 import org.apache.commons.lang3.StringUtils;
 
 import com.github.kholodovitch.adfox.exceptions.AdFoxException;
@@ -7,6 +9,7 @@ import com.github.kholodovitch.adfox.interfaces.IActionAccountAdd;
 import com.github.kholodovitch.adfox.objects.Advertiser;
 import com.github.kholodovitch.adfox.objects.Banner;
 import com.github.kholodovitch.adfox.objects.Campaign;
+import com.github.kholodovitch.adfox.objects.ContentType;
 
 public class ActionAccountAdd implements IActionAccountAdd {
 
@@ -34,14 +37,29 @@ public class ActionAccountAdd implements IActionAccountAdd {
 		return apiClient.addItem("account", "advertiser", "password=" + passSha256, "account=" + account, "eMail=" + eMail);
 	}
 
-	public int campaign(Campaign campaign) throws AdFoxException {
-		// TODO Auto-generated method stub
-		return 0;
+	public int campaign(Campaign campaign, boolean isFlayt) throws AdFoxException {
+		ArrayList<String> params = new ArrayList<String>();
+
+		params.add("name=" + campaign.getName());
+		if (!isFlayt)
+			params.add("advertiserID=" + campaign.getAdvertiserID());
+
+		return apiClient.addItem("account", "campaign", params.toArray(new String[0]));
 	}
 
-	public int banner(Banner banner) throws AdFoxException {
-		// TODO Auto-generated method stub
-		return 0;
+	public int banner(Banner banner, ContentType contentType) throws AdFoxException {
+		ArrayList<String> params = new ArrayList<String>();
+
+		params.add("campaignID=" + banner.getCampaignID());
+
+		if (StringUtils.isEmpty(banner.getTemplateID())) {
+			params.add("bannerTypeID=" + banner.getBannerTypeID());
+			params.add("contentType=" + contentType.toString());
+		} else {
+			params.add("templateID=" + banner.getTemplateID());
+		}
+
+		return apiClient.addItem("account", "campaign", params.toArray(new String[0]));
 	}
 
 }
