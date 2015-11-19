@@ -4,4 +4,6 @@ public interface IObjectAccount {
 	IActionAccountList list();
 
 	IActionAccountAdd add();
+
+	IActionAccountDelete delete();
 }

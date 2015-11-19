@@ -164,9 +164,17 @@ public class ApiClient implements IApiClient {
 	}
 
 	int addItem(String object, String actionObject, String... additional) throws AdFoxException {
+		return changeItem(object, "add", actionObject, additional);
+	}
+
+	int deleteItem(String object, String actionObject, String... additional) throws AdFoxException {
+		return changeItem(object, "delete", actionObject, additional);
+	}
+
+	int changeItem(String object, String action, String actionObject, String... additional) throws AdFoxException {
 		Element resultElement;
 		try {
-			resultElement = callApiRaw(object, "add", actionObject, additional);
+			resultElement = callApiRaw(object, action, actionObject, additional);
 		} catch (AdFoxException e) {
 			throw e;
 		} catch (Throwable e) {

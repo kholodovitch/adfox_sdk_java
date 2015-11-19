@@ -7,6 +7,7 @@ import java.util.UUID;
 import org.junit.Test;
 
 import com.github.kholodovitch.adfox.interfaces.IActionAccountAdd;
+import com.github.kholodovitch.adfox.interfaces.IActionAccountDelete;
 import com.github.kholodovitch.adfox.objects.Advertiser;
 import com.github.kholodovitch.adfox.objects.Banner;
 import com.github.kholodovitch.adfox.objects.Campaign;
@@ -21,6 +22,7 @@ public class TestAddBanner extends BaseTest {
 	@Test
 	public void testAddBanner() throws Exception {
 		IActionAccountAdd addApi = client.account().add();
+		IActionAccountDelete apiDelete = client.account().delete();
 
 		Advertiser advertiser = new Advertiser();
 		advertiser.setAccount(getRandomName());
@@ -42,6 +44,7 @@ public class TestAddBanner extends BaseTest {
 		int newBannerId = addApi.banner(banner, ContentType.graphics);
 
 		assertTrue(newBannerId > 0);
+		assertTrue(apiDelete.banner(newCampaignId, newBannerId));
 	}
 
 }
