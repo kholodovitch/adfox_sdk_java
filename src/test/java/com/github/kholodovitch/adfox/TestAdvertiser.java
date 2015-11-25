@@ -6,6 +6,8 @@ import java.util.UUID;
 
 import org.junit.Test;
 
+import com.github.kholodovitch.adfox.interfaces.IActionAccountAdd;
+import com.github.kholodovitch.adfox.interfaces.IActionAccountDelete;
 import com.github.kholodovitch.adfox.objects.Advertiser;
 
 public class TestAdvertiser extends BaseTest {
@@ -16,12 +18,16 @@ public class TestAdvertiser extends BaseTest {
 
 	@Test
 	public void testAddAdvertiser() throws Exception {
+		IActionAccountAdd apiAdd = client.account().add();
+		IActionAccountDelete apiDelete = client.account().delete();
+
 		Advertiser advertiser = new Advertiser();
 		advertiser.setAccount(getRandomName());
 		advertiser.setEMail("mail@example.com");
 
-		int advertiserId = client.account().add().advertiser(advertiser, sha256(UUID.randomUUID().toString()));
+		int advertiserId = apiAdd.advertiser(advertiser, sha256(UUID.randomUUID().toString()));
 		assertTrue(advertiserId > 0);
+		assertTrue(apiDelete.user(advertiserId));
 	}
 
 }

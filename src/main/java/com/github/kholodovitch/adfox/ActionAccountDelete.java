@@ -18,19 +18,25 @@ public class ActionAccountDelete implements IActionAccountDelete {
 			return false;
 	}
 
-	public boolean campaign(int campaignId) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean campaign(int campaignId) throws AdFoxException {
+		if (apiClient.deleteItem("account", "campaign", "actionObjectID=" + campaignId))
+			return true;
+		else
+			return false;
 	}
 
-	public boolean user(int objectId) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean user(int objectId) throws AdFoxException {
+		if (apiClient.deleteItem("account", "user", "actionObjectID=" + objectId))
+			return true;
+		else
+			return false;
 	}
 
-	public boolean place(int siteId, int... placeIdArray) {
-		// TODO Auto-generated method stub
-		return false;
+	public boolean place(int siteId, int... placeIdArray) throws AdFoxException {
+		if (apiClient.deleteItem("account", "place", "siteID=" + siteId, "listIDs=" + concatStringsWSep(placeIdArray, ",")))
+			return true;
+		else
+			return false;
 	}
 
 	public static String concatStringsWSep(int[] strings, String separator) {

@@ -6,10 +6,10 @@ public interface IActionAccountDelete {
 
 	boolean banner(int campaignId, int... bannerIdArray) throws AdFoxException;
 
-	boolean campaign(int campaignId);
+	boolean campaign(int campaignId) throws AdFoxException;
 
-	boolean user(int objectId);
+	boolean user(int objectId) throws AdFoxException;
 
-	boolean place(int siteId, int... placeIdArray);
+	boolean place(int siteId, int... placeIdArray) throws AdFoxException;
 
 }
