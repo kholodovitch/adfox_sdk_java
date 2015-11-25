@@ -1,5 +1,8 @@
 package com.github.kholodovitch.adfox.interfaces;
 
+import com.github.kholodovitch.adfox.exceptions.AdFoxException;
+import com.github.kholodovitch.adfox.objects.ActionObject;
+
 public interface IActionCampaignPlacing {
-	void set(int actionObjectID, boolean actionStatus);
+	boolean set(ActionObject actionObject, int actionObjectID, boolean actionStatus) throws AdFoxException;
 }

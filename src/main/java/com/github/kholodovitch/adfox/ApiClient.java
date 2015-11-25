@@ -164,7 +164,7 @@ public class ApiClient implements IApiClient {
 	}
 
 	int addItem(String object, String actionObject, String... additional) throws AdFoxException {
-		Element resultElement = changeItem(object, "add", actionObject, additional);
+		Element resultElement = changeItemRaw(object, "add", actionObject, additional);
 
 		try {
 			XPath xPath = XPathFactory.newInstance().newXPath();
@@ -176,11 +176,16 @@ public class ApiClient implements IApiClient {
 	}
 
 	boolean deleteItem(String object, String actionObject, String... additional) throws AdFoxException {
-		Element resultElement = changeItem(object, "delete", actionObject, additional);
+		Element resultElement = changeItemRaw(object, "delete", actionObject, additional);
 		return resultElement != null;
 	}
 
-	Element changeItem(String object, String action, String actionObject, String... additional) throws AdFoxException {
+	boolean changeItem(String object, String action, String actionObject, String... additional) throws AdFoxException {
+		Element resultElement = changeItemRaw(object, action, actionObject, additional);
+		return resultElement != null;
+	}
+
+	Element changeItemRaw(String object, String action, String actionObject, String... additional) throws AdFoxException {
 		try {
 			return callApiRaw(object, action, actionObject, additional);
 		} catch (AdFoxException e) {

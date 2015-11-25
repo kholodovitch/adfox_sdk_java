@@ -5,14 +5,14 @@ import com.github.kholodovitch.adfox.interfaces.IObjectCampaign;
 
 public class ObjectCampaign implements IObjectCampaign {
 
-	private ActionCampaignPlacing placing;
+	private ApiClient apiClient;
 
 	public ObjectCampaign(ApiClient apiClient) {
-		placing = new ActionCampaignPlacing(apiClient);
+		this.apiClient = apiClient;
 	}
 
-	public IActionCampaignPlacing placing() {
-		return placing;
+	public IActionCampaignPlacing placing(int campaignId) {
+		return new ActionCampaignPlacing(apiClient, campaignId);
 	}
 
 }
