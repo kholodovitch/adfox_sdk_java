@@ -7,6 +7,7 @@ import com.github.kholodovitch.adfox.objects.Advertiser;
 import com.github.kholodovitch.adfox.objects.Banner;
 import com.github.kholodovitch.adfox.objects.BannerPlacements;
 import com.github.kholodovitch.adfox.objects.Campaign;
+import com.github.kholodovitch.adfox.objects.WebSite;
 
 public interface IActionAccountList {
 	List<Advertiser> advertiser() throws AdFoxException;
@@ -16,4 +17,6 @@ public interface IActionAccountList {
 	List<BannerPlacements> bannerPlacements(long bannerId) throws AdFoxException;
 
 	List<Campaign> campaign() throws AdFoxException;
+
+	List<WebSite> website() throws AdFoxException;
 }

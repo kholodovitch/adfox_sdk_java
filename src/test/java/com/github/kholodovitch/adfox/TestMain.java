@@ -13,6 +13,7 @@ import com.github.kholodovitch.adfox.objects.Advertiser;
 import com.github.kholodovitch.adfox.objects.Banner;
 import com.github.kholodovitch.adfox.objects.BannerPlacements;
 import com.github.kholodovitch.adfox.objects.Campaign;
+import com.github.kholodovitch.adfox.objects.WebSite;
 
 public class TestMain {
 
@@ -72,6 +73,14 @@ public class TestMain {
 
 		assertTrue(campaign != null);
 		assertTrue(campaign.size() > 0);
+	}
+
+	@Test
+	public void testAccountListWebsite() throws Exception {
+		List<WebSite> website = client.account().list().website();
+
+		assertTrue(website != null);
+		assertTrue(website.size() > 0);
 	}
 
 }

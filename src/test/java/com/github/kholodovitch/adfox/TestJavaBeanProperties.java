@@ -9,6 +9,7 @@ import com.github.kholodovitch.adfox.objects.Banner;
 import com.github.kholodovitch.adfox.objects.BannerPlace;
 import com.github.kholodovitch.adfox.objects.BannerPlacements;
 import com.github.kholodovitch.adfox.objects.Campaign;
+import com.github.kholodovitch.adfox.objects.WebSite;
 
 public class TestJavaBeanProperties {
 
@@ -35,6 +36,11 @@ public class TestJavaBeanProperties {
 	@Test
 	public void testCampaign() throws IntrospectionException {
 		JavaBeanTester.test(Campaign.class);
+	}
+
+	@Test
+	public void testWebsite() throws IntrospectionException {
+		JavaBeanTester.test(WebSite.class);
 	}
 
 }

@@ -8,6 +8,7 @@ import com.github.kholodovitch.adfox.objects.Advertiser;
 import com.github.kholodovitch.adfox.objects.Banner;
 import com.github.kholodovitch.adfox.objects.BannerPlacements;
 import com.github.kholodovitch.adfox.objects.Campaign;
+import com.github.kholodovitch.adfox.objects.WebSite;
 
 public class ActionAccountList implements IActionAccountList {
 
@@ -31,6 +32,10 @@ public class ActionAccountList implements IActionAccountList {
 
 	public List<Campaign> campaign() throws AdFoxException {
 		return apiClient.loadList(Campaign.class, "account", "list", "campaign");
+	}
+
+	public List<WebSite> website() throws AdFoxException {
+		return apiClient.loadList(WebSite.class, "account", "list", "website");
 	}
 
 }
