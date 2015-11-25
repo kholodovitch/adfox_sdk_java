@@ -34,7 +34,7 @@ public class ActionAccountAdd implements IActionAccountAdd {
 		if (StringUtils.isBlank(eMail))
 			throw new AdFoxException("advertiser.email is blank");
 
-		return apiClient.addItem("account", "advertiser", "password=" + passSha256, "account=" + account, "eMail=" + eMail);
+		return apiClient.addItem("account", "advertiser", "password=" + passSha256, "account=" + account, "eMail=" + eMail, "company=" + advertiser.getCompany() != null ? advertiser.getCompany() : "");
 	}
 
 	public int campaign(Campaign campaign, boolean isFlayt) throws AdFoxException {

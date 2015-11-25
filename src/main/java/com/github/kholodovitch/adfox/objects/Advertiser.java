@@ -15,7 +15,7 @@ public class Advertiser extends BaseObject {
 	private String isByAssistantCreated;
 	private String company;
 	private String eMail;
-	private String ID;
+	private int ID;
 	private String account;
 	private String ZIPCode;
 	private String firstName;
@@ -33,7 +33,7 @@ public class Advertiser extends BaseObject {
 		isByAssistantCreated = getStringContent(item, "isByAssistantCreated");
 		company = getStringContent(item, "company");
 		eMail = getStringContent(item, "eMail");
-		ID = getStringContent(item, "ID");
+		ID = getIntContent(item, "ID");
 		account = getStringContent(item, "account");
 		ZIPCode = getStringContent(item, "ZIPCode");
 		firstName = getStringContent(item, "firstName");
@@ -135,11 +135,11 @@ public class Advertiser extends BaseObject {
 		this.eMail = eMail;
 	}
 
-	public String getID() {
+	public int getID() {
 		return ID;
 	}
 
-	public void setID(String ID) {
+	public void setID(int ID) {
 		this.ID = ID;
 	}
 
