@@ -45,6 +45,8 @@ public class TestAddBanner extends BaseTest {
 
 		assertTrue(newBannerId > 0);
 		assertTrue(apiDelete.banner(newCampaignId, newBannerId));
+		assertTrue(apiDelete.campaign(newCampaignId));
+		assertTrue(apiDelete.user(advertiserId));
 	}
 
 }

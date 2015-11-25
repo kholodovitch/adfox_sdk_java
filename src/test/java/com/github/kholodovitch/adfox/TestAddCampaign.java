@@ -34,6 +34,7 @@ public class TestAddCampaign extends BaseTest {
 		int newCampaignId = addApi.campaign(campaign, false);
 		assertTrue(newCampaignId > 0);
 		assertTrue(apiDelete.campaign(newCampaignId));
+		assertTrue(apiDelete.user(advertiserId));
 	}
 
 }
